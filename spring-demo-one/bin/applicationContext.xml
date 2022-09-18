@@ -16,6 +16,11 @@
 		<constructor-arg ref="myFortuneService"></constructor-arg>
 	</bean>
 
+	<bean id="myCricketCoach"
+		class="com.love2code.springdemo.CricketCoach">
+		<property name="fortuneService" ref="myFortuneService"></property>
+	</bean>
+
 	<bean id="myLoggerConfig"
 		class="com.love2code.springdemo.MyLoggerConfig"
 		init-method="initLogger">
