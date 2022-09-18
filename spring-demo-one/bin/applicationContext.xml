@@ -9,7 +9,12 @@
 
 	<!-- Define your beans here -->
 
-	<bean id="myCoach" class="com.love2code.springdemo.BasketCoach"></bean>
+	<bean id="myFortuneService"
+		class="com.love2code.springdemo.HappyFortuneService"></bean>
+
+	<bean id="myCoach" class="com.love2code.springdemo.BasketCoach">
+		<constructor-arg ref="myFortuneService"></constructor-arg>
+	</bean>
 
 	<bean id="myLoggerConfig"
 		class="com.love2code.springdemo.MyLoggerConfig"
