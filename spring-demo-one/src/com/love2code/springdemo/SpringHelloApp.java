@@ -17,6 +17,7 @@ public class SpringHelloApp {
 		System.out.println(theCoach.getDailyFortune());
 
 		System.out.println(theCoach.getEmail());
+		System.out.println(theCoach.getTeam());
 
 		context.close();
 

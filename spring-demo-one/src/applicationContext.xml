@@ -19,8 +19,8 @@
 	<bean id="myCricketCoach"
 		class="com.love2code.springdemo.CricketCoach">
 		<property name="fortuneService" ref="myFortuneService"></property>
-		<property name="email" value="thebestcoach@luv2code.com"></property>
-		<property name="team" value="Sunrises Hyderabad"></property>
+		<property name="email" value="${foo.email}"></property>
+		<property name="team" value="${foo.team}"></property>
 	</bean>
 
 	<bean id="myLoggerConfig"
@@ -29,6 +29,9 @@
 		<property name="rootLoggerLevel" value="FINE" />
 		<property name="printedLoggerLevel" value="FINE" />
 	</bean>
+
+	<context:property-placeholder
+		location="classpath:sport.properties" />
 
 </beans>
 
