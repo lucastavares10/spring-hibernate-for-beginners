@@ -12,13 +12,17 @@
 	<bean id="myFortuneService"
 		class="com.love2code.springdemo.HappyFortuneService"></bean>
 
+	<bean id="myRandomFortuneService"
+		class="com.love2code.springdemo.RandomFortuneService">
+	</bean>
+
 	<bean id="myCoach" class="com.love2code.springdemo.BasketCoach">
 		<constructor-arg ref="myFortuneService"></constructor-arg>
 	</bean>
 
 	<bean id="myCricketCoach"
 		class="com.love2code.springdemo.CricketCoach">
-		<property name="fortuneService" ref="myFortuneService"></property>
+		<property name="fortuneService" ref="myRandomFortuneService"></property>
 		<property name="email" value="${foo.email}"></property>
 		<property name="team" value="${foo.team}"></property>
 	</bean>
