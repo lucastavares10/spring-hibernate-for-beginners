@@ -16,5 +16,14 @@ public class BasketCoach implements Coach {
 	public String getDailyFortune() {
 		return this.fortuneService.getFortune();
 	}
+	
+	public void doMyStartupStuff() {
+		System.out.println("BasketCoach: inside method doMyStartupStuff");
+	}
+
+	public void doMyCleanupStuff() {
+		System.out.println("BasketCoach Coach: inside method doMyCleanupStuff");
+	}
+
 
 }

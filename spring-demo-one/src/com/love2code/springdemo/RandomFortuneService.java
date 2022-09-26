@@ -10,12 +10,12 @@ public class RandomFortuneService implements FortuneService {
 	public RandomFortuneService() {
 		this.sorter = new Random();
 		this.fortunes = new String[] { "Behind every great fortune lies a great crime.",
-				"Fortune favors the prepared mind.", "All things are difficult before they are easy." };
+				"Fortune favors the prepar ed mind.", "All things are difficult before they are easy." };
 	}
 
 	@Override
 	public String getFortune() {
-		return fortunes[this.sorter.nextInt(3)];
+		return fortunes[this.sorter.nextInt(this.fortunes.length)];
 	}
 
 }
