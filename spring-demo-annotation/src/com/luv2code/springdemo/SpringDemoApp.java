@@ -10,11 +10,7 @@ public class SpringDemoApp {
 
 		SwimCoach theCoach = context.getBean("swimCoach", SwimCoach.class);
 
-		SwimCoach theAlhpaCoach = context.getBean("swimCoach", SwimCoach.class);
-
 		System.out.println(theCoach.getDailyFortune());
-
-		System.out.println("theCoach == theAlhpaCoach: " + (theCoach == theAlhpaCoach));
 
 		context.close();
 

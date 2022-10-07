@@ -1,13 +1,15 @@
 package com.luv2code.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class SwimCoach implements Coach {
 
 	@Value("${foo.email}")
@@ -36,6 +38,16 @@ public class SwimCoach implements Coach {
 
 	public String getTeam() {
 		return team;
+	}
+
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println("SwimCoach startup bean");
+	}
+
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println("SwimCoach clean bean");
 	}
 
 }
